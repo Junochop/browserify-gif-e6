@@ -33,7 +33,7 @@ const combineArrays = (categories) => {
   	gifArray.forEach((gif) => {
   		if (gif.category === category.id) {
   			gif.categoryName = category.name;
-  			gif.categoryDataName = category.DataName;
+  			gif.categoryDataName = category.dataName;
   		}
   	});
   });
@@ -48,6 +48,11 @@ const initializer = () => {
 	loadGifs(whenGifsLoad, errorFunction);
 };
 
-module.exports = initializer;
+//Get gifs
+const getGifs = () => {
+	return gifArray;
+};
+
+module.exports = {initializer, getGifs};
 
 
